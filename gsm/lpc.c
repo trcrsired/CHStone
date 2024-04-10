@@ -43,7 +43,7 @@ Autocorrelation (word * s /* [0..159]     IN/OUT  */ ,
  *  be scaled in order to avoid an overflow situation.
  */
 {
-  register int k, i;
+  int k, i;
 
   word temp;
   word smax;
@@ -162,10 +162,10 @@ Autocorrelation (word * s /* [0..159]     IN/OUT  */ ,
 
 void
 Reflection_coefficients (longword * L_ACF /* 0...8        IN      */ ,
-			 register word * r /* 0...7        OUT     */ )
+			 word * r /* 0...7        OUT     */ )
 {
-  register int i, m, n;
-  register word temp;
+  int i, m, n;
+  word temp;
   word ACF[9];			/* 0..8 */
   word P[9];			/* 0..8 */
   word K[9];			/* 2..8 */
@@ -232,7 +232,7 @@ Reflection_coefficients (longword * L_ACF /* 0...8        IN      */ ,
 /* 4.2.6 */
 
 void
-Transformation_to_Log_Area_Ratios (register word * r /* 0..7    IN/OUT */ )
+Transformation_to_Log_Area_Ratios (word * r /* 0..7    IN/OUT */ )
 /*
  *  The following scaling for r[..] and LAR[..] has been used:
  *
@@ -241,8 +241,8 @@ Transformation_to_Log_Area_Ratios (register word * r /* 0..7    IN/OUT */ )
  *  with -1.625 <= real_LAR <= 1.625
  */
 {
-  register word temp;
-  register int i;
+  word temp;
+  int i;
 
 
   /* Computation of the LAR[0..7] from the r[0..7]
@@ -274,9 +274,9 @@ Transformation_to_Log_Area_Ratios (register word * r /* 0..7    IN/OUT */ )
 /* 4.2.7 */
 
 void
-Quantization_and_coding (register word * LAR /* [0..7]       IN/OUT  */ )
+Quantization_and_coding (word * LAR /* [0..7]       IN/OUT  */ )
 {
-  register word temp;
+  word temp;
 
 
   /*  This procedure needs four tables; the following equations
