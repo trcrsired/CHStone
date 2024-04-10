@@ -79,11 +79,9 @@
  */
 
 void
-BF_encrypt (data, encrypt)
-     BF_LONG *data;
-     int encrypt;
+BF_encrypt (BF_LONG *data, int encrypt)
 {
-  register BF_LONG l, r, *p, *s;
+  BF_LONG l, r, *p, *s;
   p = key_P;
   s = &(key_S[0]);
   l = data[0];

@@ -79,17 +79,11 @@
  */
 
 void
-BF_cfb64_encrypt (in, out, length, ivec, num, encrypt)
-     unsigned char *in;
-     unsigned char *out;
-     long length;
-     unsigned char *ivec;
-     int *num;
-     int encrypt;
+BF_cfb64_encrypt (unsigned char *in, unsigned char *out, long length, unsigned char *ivec, int *num, int encrypt)
 {
-  register BF_LONG v0, v1, t;
-  register int n;
-  register long l;
+  BF_LONG v0, v1, t;
+  int n;
+  long l;
   BF_LONG ti[2];
   unsigned char *iv, c, cc;
 

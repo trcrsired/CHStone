@@ -367,7 +367,7 @@ int
 MixColumn_AddRoundKey (int statemt[32], int nb, int n)
 {
   int ret[8 * 4], j;
-  register int x;
+  int x;
 
   for (j = 0; j < nb; ++j)
     {
@@ -434,7 +434,7 @@ int
 AddRoundKey_InversMixColumn (int statemt[32], int nb, int n)
 {
   int ret[8 * 4], i, j;
-  register int x;
+  int x;
 
   for (j = 0; j < nb; ++j)
     {
