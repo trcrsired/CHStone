@@ -78,11 +78,11 @@ vol. COM-25, pp. 1004-1009, Sept 1977.
 void
 ChenIDct (int *x, int *y)
 {
-  register int i;
-  register int *aptr;
-  register int a0, a1, a2, a3;
-  register int b0, b1, b2, b3;
-  register int c0, c1, c2, c3;
+  int i;
+  int *aptr;
+  int a0, a1, a2, a3;
+  int b0, b1, b2, b3;
+  int c0, c1, c2, c3;
 
   /* Loop over columns */
 

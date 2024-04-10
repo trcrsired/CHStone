@@ -51,7 +51,7 @@ and can be improved, but comprise very little of software run-time.
 */
 
 /* Used for sign extensions. */
-const static int extend_mask[20] = {
+const static unsigned extend_mask[20] = {
   0xFFFFFFFE, 0xFFFFFFFC, 0xFFFFFFF8, 0xFFFFFFF0, 0xFFFFFFE0, 0xFFFFFFC0,
   0xFFFFFF80, 0xFFFFFF00, 0xFFFFFE00, 0xFFFFFC00, 0xFFFFF800, 0xFFFFF000,
   0xFFFFE000, 0xFFFFC000, 0xFFFF8000, 0xFFFF0000, 0xFFFE0000, 0xFFFC0000,
@@ -60,7 +60,7 @@ const static int extend_mask[20] = {
 
 
 /* Masks */
-const int bit_set_mask[32] = {	/* This is 2^i at ith position */
+const unsigned bit_set_mask[32] = {	/* This is 2^i at ith position */
   0x00000001, 0x00000002, 0x00000004, 0x00000008,
   0x00000010, 0x00000020, 0x00000040, 0x00000080,
   0x00000100, 0x00000200, 0x00000400, 0x00000800,
@@ -71,7 +71,7 @@ const int bit_set_mask[32] = {	/* This is 2^i at ith position */
   0x10000000, 0x20000000, 0x40000000, 0x80000000
 };
 
-const int lmask[32] = {		/* This is 2^{i+1}-1 */
+const unsigned lmask[32] = {		/* This is 2^{i+1}-1 */
   0x00000001, 0x00000003, 0x00000007, 0x0000000f,
   0x0000001f, 0x0000003f, 0x0000007f, 0x000000ff,
   0x000001ff, 0x000003ff, 0x000007ff, 0x00000fff,

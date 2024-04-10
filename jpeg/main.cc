@@ -34,6 +34,32 @@
  * agents, transferees, successors, and assigns.
  *
  */
+#include <fast_io.h>
+#include <fast_io_driver/timer.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-extern unsigned char *CurHuffReadBuf;
-void DecodeHuffMCU (int *out_buf, int num_cmp);
+#include "global.h"
+#include "decode.h"
+#include "init.h"
+#include "marker.c"
+#include "chenidct.c"
+#include "huffman.h"
+#include "decode.c"
+#include "huffman.c"
+#include "jfif_read.c"
+#include "jpeg2bmp.c"
+
+int
+main ()
+{
+  main_result = 0;
+{
+  ::fast_io::timer timer(u8"jpeg");
+  jpeg2bmp_main ();
+}
+
+  printf ("%d\n", main_result);
+
+  return main_result;
+}
