@@ -8,4 +8,10 @@ if(FAST_IO_DIR)
 include_directories(${FAST_IO_DIR}/include)
 endif()
 
+if(CMAKE_SYSTEM_NAME STREQUAL "Windows" OR CMAKE_SYSTEM_NAME STREQUAL "Cygwin" OR CMAKE_SYSTEM_NAME STREQUAL "Msys")
+link_libraries(ntdll)
+endif()
+
 add_executable(adpcm adpcm/adpcm.cc)
+add_executable(aes aes/aes.cc)
+add_executable(bf blowfish/bf.cc)
