@@ -116,10 +116,10 @@ main ()
   int funct;
   short address;
   int tgtadr;
-  {
-    ::fast_io::timer timer(u8"mips");
-    while (1)
+
     {
+      {
+      ::fast_io::timer timer(u8"mips");
       int i;
       int n_inst;
 
@@ -302,7 +302,7 @@ main ()
 	{
 	  main_result += (dmem[j] != outData[j]);
 	}
-    }
+      }
       printf ("%d\n", main_result);
       return main_result;
     }
