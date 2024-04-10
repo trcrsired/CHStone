@@ -114,8 +114,7 @@ Fill_Buffer ()
 }
 
 unsigned int
-Show_Bits (N)
-     int N;
+Show_Bits (int N)
 {
   return ld_Bfr >> (unsigned)(32-N)%32;
 }
@@ -133,8 +132,7 @@ Get_Bits1 ()
 /* advance by n bits */
 
 void
-Flush_Buffer (N)
-     int N;
+Flush_Buffer (int N)
 {
   int Incnt;
 
@@ -187,8 +185,7 @@ Flush_Buffer (N)
 /* return next n bits (right adjusted) */
 
 unsigned int
-Get_Bits (N)
-     int N;
+Get_Bits (int N)
 {
   unsigned int Val;
 

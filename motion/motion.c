@@ -52,13 +52,9 @@ _ANSI_ARGS_ ((int *pred, int r_size, int motion_code,
 
 /* ISO/IEC 13818-2 sections 6.2.5.2, 6.3.17.2, and 7.6.3: Motion vectors */
 void
-motion_vectors (PMV, dmvector, motion_vertical_field_select, s,
-		motion_vector_count, mv_format, h_r_size, v_r_size, dmv,
-		mvscale)
-     int PMV[2][2][2];
-     int dmvector[2];
-     int motion_vertical_field_select[2][2];
-     int s, motion_vector_count, mv_format, h_r_size, v_r_size, dmv, mvscale;
+motion_vectors (int PMV[2][2][2], int dmvector[2], int motion_vertical_field_select[2][2], int s,
+		int motion_vector_count, int mv_format, int h_r_size, int v_r_size, int dmv,
+		int mvscale)
 {
   if (motion_vector_count == 1)
     {
@@ -92,15 +88,15 @@ motion_vectors (PMV, dmvector, motion_vertical_field_select, s,
 /* get and decode motion vector and differential motion vector 
    for one prediction */
 void
-motion_vector (PMV, dmvector, h_r_size, v_r_size, dmv, mvscale,
-	       full_pel_vector)
-     int *PMV;
-     int *dmvector;
-     int h_r_size;
-     int v_r_size;
-     int dmv;			/* MPEG-2 only: get differential motion vectors */
-     int mvscale;		/* MPEG-2 only: field vector in frame pic */
-     int full_pel_vector;	/* MPEG-1 only */
+motion_vector (
+     int *PMV,
+     int *dmvector,
+     int h_r_size,
+     int v_r_size,
+     int dmv,			/* MPEG-2 only: get differential motion vectors */
+     int mvscale,		/* MPEG-2 only: field vector in frame pic */
+     int full_pel_vector	/* MPEG-1 only */
+)
 {
   int motion_code;
   int motion_residual;
@@ -144,11 +140,11 @@ motion_vector (PMV, dmvector, h_r_size, v_r_size, dmv, mvscale,
    in 7.6.3.1.  The end results (PMV[][][]) should, however, be the same.  */
 
 static void
-decode_motion_vector (pred, r_size, motion_code, motion_residual,
-		      full_pel_vector)
-     int *pred;
-     int r_size, motion_code, motion_residual;
-     int full_pel_vector;	/* MPEG-1 (ISO/IEC 11172-1) support */
+decode_motion_vector (
+     int *pred,
+     int r_size, int motion_code, int motion_residual,
+     int full_pel_vector	/* MPEG-1 (ISO/IEC 11172-1) support */
+)
 {
   int lim, vec;
 
