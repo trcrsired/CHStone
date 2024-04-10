@@ -137,7 +137,7 @@ main ()
   float64 x1, x2;
       main_result = 0;
       {
-      ::fast_io::timer timer(u8"dfdiv");
+      ::fast_io::timer timer(u8"dfmul");
       for (i = 0; i < N; i++)
 	{
 	  float64 result;
