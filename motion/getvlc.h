@@ -53,6 +53,8 @@
    of the tables in Annex B to a form more convenient towards 
    parallel (more than one-bit-at-a-time) decoding */
 
+#undef ERROR
+#define ERROR ((char)(-1))
 
 /* Table B-10, motion_code, codes 0001 ... 01xx */
 const char MVtab0[8][2] = {
